@@ -5,7 +5,6 @@ import os
 
 app = Flask(__name__)
 
-# Simple storage - in a real app you'd use a database
 url_database = {}
 
 def generate_short_code():
@@ -24,7 +23,6 @@ def shorten_url():
     long_url = data['url']
     short_code = generate_short_code()
     
-    # Make sure the code is unique
     while short_code in url_database:
         short_code = generate_short_code()
     
